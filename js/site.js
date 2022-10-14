@@ -1,3 +1,41 @@
+/* ---------- STEP BY STEP LIST?! ---------- */
+//-----------------------------------------------
+/* 
+--- Get Values from User - Loan Amount, Terms (Months), Interest Rate?! 
+--- Do Math (For Loop?!)
+--- Display Math / Results?! For Different Variables / Variable Results?! Month?!, Payment?!, Principle?!, Interest?!,
+Total Interest?!, Balance?! (Based on Array?! Etc.?!)
+-
+--- Do in Order of the Formulas?! That was Provided?! Etc.?!
+*/
+//-----------------------------------------------
+/* ---------- FORMULAS USED?! ---------- */
+//-----------------------------------------------
+/*
+--- Total Monthly Payment = (Loan Amount / Amount Loaned) x (Rate?! Interest Rate?! / 1200) / (1 - (1 + Rate / 1200)(^-Number of Months))
+
+--- Remaining Balance before the very first month equals the amount of the loan.?! (Balance / Remaining Balance / Etc.?! = Total Loan Amount - Principal?!)
+(Perhaps for First, it's just Loan Amount - Principal, than take that New Balance Number / Sum?! / Etc.?! and -Minus- Again with Principal / New Prinicpal / Etc.?!)
+
+--- Interest Payment =  Previous Remaining Balance x Rate / 1200 
+- 1?! (Perhaps for First, it's just Loan Amount - Principal, than take that New Balance Number / Sum?! / Etc.?! and -Minus- Again with Principal / New Prinicpal / Etc.?!)
+
+--- Principal = Total Monthly Payment - Interest Payment
+
+--- At end each month, Remaining Balance = Previous Remaining Balance - principal payments
+(Perhaps for First, it's just Loan Amount - Principal, than take that New Balance Number / Sum?! / Etc.?! and -Minus- Again with Principal / New Prinicpal / Etc.?!)
+
+*/
+//-----------------------------------------------
+/* ---------- CODE STUFF?! ---------- */
+//-----------------------------------------------
+/*
+--- Replace / Edit / Adjust / Etc. Build Drop Down with Fizz Buzz Get Value
+---
+*/
+
+
+
 // this initial dataset for superdog.
 //It is an array of objects
 const events = [
@@ -304,3 +342,80 @@ function saveEventData() {
   buildDropDown();
 
 }
+
+
+
+/* ----- FizzBuzz / Fizz Buzz to Collect User Input?! ----- */
+/* " //get starting values from the scree
+//Controller Function
+
+function getValues() {
+  // get the values from the page
+  let fizzValue = document.getElementById("fizzValue").value;
+  let buzzValue = document.getElementById("buzzValue").value;
+  let customValue = document.getElementById("customValue").value;
+
+  // parse the values in to integers
+  fizzValue = parseInt(fizzValue);
+  buzzValue = parseInt(buzzValue);
+  customValue = parseInt(customValue);
+
+  if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue) && fizzValue > 0 && buzzValue > 0 && Number.isInteger(customValue)) {
+    // generate the numbers based on user input
+    let numbers = generateFizzBuzz(fizzValue, buzzValue, customValue);
+
+    // display result on page
+    displayFizzBuzz(numbers);
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Only intergers and numbers greater than 0 are allowed for FizzBuzz!",
+    });
+  }
+}
+
+function generateFizzBuzz(fizzValue, buzzValue, customValue) {
+  let fizzbuzz = [];
+  let cap = customValue;
+
+  for (let i = 1; i <= cap; i++) {
+    if((i % fizzValue == 0) && (i % buzzValue == 0)){
+      fizzbuzz.push('FizzBuzz');
+    }
+    else if(i % fizzValue == 0){
+      fizzbuzz.push('Fizz')
+    }
+    else if(i % buzzValue == 0){
+      fizzbuzz.push('Buzz')
+    }    
+    else{
+      fizzbuzz.push(i);
+    }
+  }
+
+  return fizzbuzz;
+}
+
+function displayFizzBuzz(numbers) {
+  let className = "even";
+  let templateRows = "";
+
+  for (let i = 0; i < numbers.length; i++) {
+    let number = numbers[i];
+
+    if (i % 10 == 0) {
+      templateRows += "<tr>";
+    }
+
+    templateRows += `<td class="${className}"> ${number} </td>`;
+
+    //An templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+
+    if ((i + 1) % 10 == 0) {
+      templateRows += "</tr>";
+    }
+  }
+
+  document.getElementById("results").innerHTML = templateRows;
+} " */
