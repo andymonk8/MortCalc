@@ -1,0 +1,82 @@
+:root{
+    --ap-primary-color: #001e43;
+    --ap-secondary-color: rgb(255, 153, 59);
+    --ap-dark-color: #1b1b1b;
+    --ap-light-color: #dfe3e4;
+
+    --ap-navbar-toggler-glow: rgba(255, 153, 59, .6);
+    --ap-navbar-toggler-color: #ff993b;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex: 1 0 auto;
+    margin-top: 4.7rem;
+}
+
+footer{
+    flex-shrink: 0;
+}
+
+.footer{
+    background: var(--ap-primary-color);
+    color: var(--ap-light-color);
+}
+
+.socialIcons{
+    color: var(--ap-light-color);
+    font-size: 2rem;
+    padding-left: .5rem;
+}
+
+.socialIcons:hover{
+    color: var(--ap-secondary-color);
+}
+
+
+/*---------- navbar overrides ----------*/
+
+#mainNav{
+    background: var(--ap-primary-color);
+}
+
+#mainNav button{
+    border-color: var(--ap-secondary-color);
+}
+
+.navbar-toggler{
+    color: var(--ap-navbar-toggler-glow);
+}
+
+.navbar-toggler-icon-ap{
+    color: var(--ap-navbar-toggler-color);
+    font-size: 1.5rem;
+}
+/*--------- navbar overrides end ----------*/
+
+
+.checklist{
+ list-style-type: none;   
+}
+
+.checkList>li i{
+    color: var(--ap-secondary-color);
+    padding-right: .5rem;
+}
+
+.devIcons{
+    font-size: 4rem;
+    padding-left: .5rem;
+}
+
+.appLogo{
+    max-width: 400px;
+}
