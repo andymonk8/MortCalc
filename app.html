@@ -74,74 +74,88 @@
       </nav>
     </header>
 
-    <main class="content container">
-      <div class="row">
-        <div class="col-6">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Pick a Location
-            </button>
-            <div id="eventDropDown">
-              <!--template for events-->
+    <main class="content container mt-4">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col">
+            <form>
+              <div class="mb-1 fw-bold">
+                <label for="loanAmount" class="form-label">Loan Amount:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="loanA"
+                  value="25000" />
+              </div>
+              <div class="mb-1 fw-bold">
+                <label for="term" class="form-label">Payments:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="loanT"
+                  value="60" />
+              </div>
+              <div class="mb-1 fw-bold">
+                <label for="interestRate" class="form-label">Rate:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="loanR"
+                  value="5" />
+              </div>
+              <button
+                type="button"
+                id="btnSubmit"
+                class="btn btn-primary"
+                style="float: right">
+                Calculate
+              </button>
+            </form>
+          </div>
+          <div class="col">
+            <div id="paymentTitle">
+              <p class="fw-bolder">Your Monthly Payments:</p>
+            </div>
+            <div class="lead fw-bold justify-content-center" height="50">
+              <p
+                class="lead fw-bold justify-content-center"
+                id="paymentBold"></p>
+            </div>
+            <div class="row row-cols-2">
+              <div class="col">
+                <label class="text-left fw-bolder">Total Principcal:</label>
+              </div>
+              <div class="col text-right" id="totalPrincipalBold"></div>
+              <div class="col text-left">
+                <label class="fw-bolder">Total Interest:</label><br />
+              </div>
+              <div class="col text-right" id="totalInterestBold"></div>
+              <div class="col text-left">
+                <label class="fw-bolder">Total Cost:</label>
+              </div>
+              <div class="col text-right" id="totalCostBold"></div>
             </div>
           </div>
-          <table class="table table-striped">
-            <tr>
-              <th colspan="2" id="statsHeader">Stats for All Events</th>
-            </tr>
-            <tr>
-              <td>Total Attendance</td>
-              <td id="total">0</td>
-            </tr>
-            <tr>
-              <td>Average Attendance</td>
-              <td id="average">0</td>
-            </tr>
-            <tr>
-              <td>Most Attendance</td>
-              <td id="most">0</td>
-            </tr>
-            <tr>
-              <td>Least Attendance</td>
-              <td id="least">0</td>
-            </tr>
-          </table>
         </div>
-        <div class="col-6">
-          <img
-          src="/img/Andy_Pham_White_Logo-removebg-preview-resize.png"
-          class="img-fluid p-2" />
-        </div>
-        <div class="row border-top border-2">
-          <div class="col-12 mt-2">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#eventModal">
-            Add Event
-          </button>
-          <div class="table responsive mt-2">
-            <table class="table table-striped" id="eventData">
-              <thead class="table-primary">
+
+        <div class="row">
+          <div class="col">
+            <table class="table table-hover table-striped">
+              <thead id="tableheader" class="text-dark">
                 <tr>
-                  <th>Event Name</th>
-                  <th>City</th>
-                  <th>State</th>
-                  <th>Attendance</th>
-                  <th>Event Date</th>
+                  <th>Month</th>
+                  <th>Payment</th>
+                  <th>Principal</th>
+                  <th>Interest</th>
+                  <th>Total Interest</th>
+                  <th>Balance</th>
                 </tr>
               </thead>
-              <tbody id="eventBody">
-                <!--template data goes here-->
+              <tbody id="tableBody">
+                <!----Monthly Payment Data / Table / Etc.?!-->
               </tbody>
             </table>
           </div>
-        </div>
         </div>
       </div>
     </main>
@@ -299,8 +313,9 @@
       <li><a class="dropdown-item" onclick="getEvents(this)"></a></li>
     </template>
 
-    <template id="eventData-template">
+    <template id="tableTemplate">
       <tr>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -318,5 +333,8 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="/js/site.js"></script>
+    <script>
+      document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
   </body>
 </html>
