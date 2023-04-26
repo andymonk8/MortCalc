@@ -168,7 +168,7 @@ function displayData(payments, loanAmount, payment) {
     currency: "USD",
   });
 
-  // DIsplay Total Cost Bold?!
+  // Display Total Cost Bold?!
   let labelTotalCostBold = document.getElementById("totalCostBold");
   labelTotalCostBold.innerHTML = Number(totalCostBold).toLocaleString("en-US", {
     style: "currency",

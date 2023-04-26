@@ -4,6 +4,8 @@
     --ap-dark-color: #1b1b1b;
     --ap-light-color: #dfe3e4;
 
+    --ap-background-color: #000038;
+
     --ap-navbar-toggler-glow: rgba(255, 153, 59, .6);
     --ap-navbar-toggler-color: #ff993b;
 }
@@ -15,6 +17,8 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
+    /*background-color: var(--ap-background-color);
+    color: var(--ap-light-color);*/
 }
 
 .content{
@@ -79,4 +83,9 @@ footer{
 
 .appLogo{
     max-width: 400px;
+}
+
+.logo {
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
 }
